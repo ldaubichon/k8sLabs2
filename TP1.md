@@ -44,6 +44,8 @@ Testez la présence votre ingress controller avec la commande suivante:
 
     kubectl --namespace monnamespace get services -o wide nginx-ingress-controller-controller
 
+![](images/nginxingresscontroler.png)
+
 **Etape2: Cert Manager**
 
 Afin d'avoir de l'https, vous devez déployer cert manager sur votre cluster. 
