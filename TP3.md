@@ -173,7 +173,10 @@ Pour cela vous allez avoir besoin d'une entrée DNS, me prévenir afin que je pu
 Celle-ci sera sous le format prénom-wp.daubichon.com
 
 Vous devriez obtenir un yaml de ce type:
+
+
 ![](images/mysqlwordpress/certificate.png)
+
 
 Vous devriez maintenant avoir un site wordpress qui tourne sur kubernetes joignable depuis votre DNS ! 
 
