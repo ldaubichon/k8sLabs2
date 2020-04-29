@@ -44,7 +44,7 @@ Consultez votre secret via une commande kubectl:
 
     kubectl get secrets -n lionel
 
-![](images/secretmysql.png)
+![](images/mysqlwordpress/secretmysql.png)
 
 Vous pouvez aussi faire un describe sur votre secret, vous pouvez également créer votre secret à la main,
 en revanche cela implique d'encoder le secret en base64 avant. 
@@ -63,7 +63,7 @@ Lors de la création de votre volume, utilisez les paramètres suivants:
 * Donnez un Storage de 20Gi
 * Donnez la valeur ReadWriteOnce au paramètre [accessModes: ]
 
-![](images/pvcmysql.png)
+![](images/mysqlwordpress/pvcmysql.png)
 
 Cette étape va automatiquement provisionner un volume sur ScaleWay
 
@@ -75,7 +75,7 @@ Créer un déploiement MySQL sans réplica.
 
 Votre déploiement n'est pas complet mais vous devriez obtenir un .yaml sensiblement identique:
 
-![](images/deploymentmysql.png)
+![](images/mysqlwordpress/deploymentmysql.png)
 
 Dans votre déploiement vous allez avoir besoin de référencer plusieurs éléments:
 
@@ -87,7 +87,7 @@ Ces deux notions se passent au niveau des ***specs*** de votre déploiement.
 
 Lorsque vous aurez édité votre .**yaml** vous devriez obtenir un résultat similaire à celui-ci:
 
-![](images/deploymentfull.png)
+![](images/mysqlwordpress/deploymentfull.png)
 
 Faites votre déploiement.
 
@@ -112,7 +112,8 @@ Créez un service kubernetes qui puisse exposer votre déploiement.
 
 Votre mysql est maintenant déployé dans votre namespace. 
 Vous devriez obtenir un résultat similaire:
-![](images/servicemysql.png)
+
+![](images/mysqlwordpress/servicemysql.png)
 
 
 ## Wordpress
