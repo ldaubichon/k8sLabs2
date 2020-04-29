@@ -59,6 +59,10 @@ l'autorité de certification.
 
 Plusieurs modes d'installation sont présentés, réalisez cette installation via **Helm**.  
 
+Attendez vous à obtenir ce résultat lorsque vous aurez installé cert manager:
+
+![](images/certmanager.png)
+
 **Création d'un issuer**
 
 La création d'un issuer va vous permettre de mettre en place une autorité de certification sur votre cluster.
@@ -67,7 +71,9 @@ Vous devrez donner votre email, pensez à bien utiliser ACME (voir documentation
 
 Lorsque le déploiement est terminé, faite une commande kubectl pour voir l'état de toutes vos ressources Kubernetes dans votre namespace, essayez de vous référer à la documentation kubernetes pour obtenir la commande.
 
- 
+Le retour attendu devrait être similiaire à celui-ci:
+
+![](images/fullnamespacesearch.png) 
 
 *Nous venons de déployer un **ingress controller**, **cert manager**, et un **issuer** qui va représenter
 l'autorité de certification pour vos futurs certificats. 
