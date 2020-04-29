@@ -125,7 +125,7 @@ Basez vous sur le premier volumclaim pour mysql.
 
 Vous devriez obtenir ce type de fichier yaml:
 
-![](images/mysqlwordpress/pvcwordpress.yaml)
+![](images/mysqlwordpress/pvcwordpress.png)
 
 **Etape 2**
 
@@ -134,7 +134,7 @@ Pensez également à utiliser les bons environnements et volumes dans la défini
 
 Vous devriez obtenir un déploiement identique à celui-ci:
 
-![](images/mysqlwordpress/deploymentwordpress.yaml)
+![](images/mysqlwordpress/deploymentwordpress.png)
 
 **Etape 3**
 
@@ -143,6 +143,11 @@ Création d'un service.
 Créez un service faisant référence à votre déploiement wordpress.
 
 **Me demander si point de blocage.** 
+
+Aide: 
+
+![](images/mysqlwordpress/wordpressdeploymentclaim.png)
+
 
 Vérifiez que vos déploiements ont bien fonctionné avec une commande kubernetes. 
 Vous pouvez également effectuer la commande kubectl get pvc pour savoir si vos volumes sont bien lancés. 
