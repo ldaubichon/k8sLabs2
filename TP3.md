@@ -117,3 +117,58 @@ Vous devriez obtenir un résultat similaire:
 
 
 ## Wordpress
+
+**Etape 1**
+
+Créer un second volume persistent volume claim.
+Basez vous sur le premier volumclaim pour mysql. 
+
+Vous devriez obtenir ce type de fichier yaml:
+
+![](images/mysqlwordpress/pvcwordpress.yaml)
+
+**Etape 2**
+
+Créer un déploiement avec l'image wordpress:4.8-apache.
+Pensez également à utiliser les bons environnements et volumes dans la définition de votre déploiement. 
+
+Vous devriez obtenir un déploiement identique à celui-ci:
+
+![](images/mysqlwordpress/deploymentwordpress.yaml)
+
+**Etape 3**
+
+Création d'un service. 
+
+Créez un service faisant référence à votre déploiement wordpress.
+
+**Me demander si point de blocage.** 
+
+Vérifiez que vos déploiements ont bien fonctionné avec une commande kubernetes. 
+Vous pouvez également effectuer la commande kubectl get pvc pour savoir si vos volumes sont bien lancés. 
+
+Il doivent afficher le status bound:
+![](images/mysqlwordpress/bound.png)
+
+Faite également une commande kubectl pour explorer votre service.
+
+**Etape 4**
+
+Maintenant que votre déploiement est fonctionnel, vous allez avoir besoin de créer un ingress, afin de router le traffic vers votre service, depuis votre ingress controller. 
+
+Pour ce faire créez un ingress comme vous l'avez fait au **TP1**. 
+
+Si point de blocage me demander. 
+
+**Etape 5**
+
+Générer une demande de certificat. Pour rappel vous avez déjà une autorité de certification sur votre cluster (issuer), il faut donc simplement créer un objet de type **Certificate.** 
+
+Pour cela vous allez avoir besoin d'une entrée DNS, me prévenir afin que je puisse créer l'entrée DNS. 
+Celle-ci sera sous le format prénom-wp.daubichon.com
+
+Vous devriez obtenir un yaml de ce type:
+![](images/mysqlwordpress/certificate.png)
+
+Vous devriez maintenant avoir un site wordpress qui tourne sur kubernetes joignable depuis votre DNS ! 
+
