@@ -1,0 +1,19 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: hello-kubernetes
+  namespace: lionel
+spec:
+  tls:
+  - hosts: 
+    - check.daubichon.com
+    secretName: check.daubichon.com
+  rules:
+  - host: check.daubichon.com
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: hello-kubernetes
+          servicePort: 8080
+

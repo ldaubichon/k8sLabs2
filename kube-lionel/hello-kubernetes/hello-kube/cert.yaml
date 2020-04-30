@@ -1,0 +1,12 @@
+apiVersion: cert-manager.io/v1alpha2
+kind: Certificate
+metadata:
+  name: check.daubichon.com
+  namespace: lionel
+spec:
+  secretName: check.daubichon.com
+  issuerRef:
+    name: letsencrypt
+  commonName: check.daubichon.com
+  dnsNames:
+  - check.daubichon.com

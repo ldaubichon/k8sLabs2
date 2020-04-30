@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: lionel
+  creationTimestamp: null
+  labels:
+    app: hello-kubernetes
+  name: hello-kubernetes
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: hello-kubernetes
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: hello-kubernetes
+    spec:
+      containers:
+      - image: paulbouwer/hello-kubernetes:1.7
+        name: hello-kubernetes
+        resources: {}
+status: {}
