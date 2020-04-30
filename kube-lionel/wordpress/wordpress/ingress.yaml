@@ -1,0 +1,19 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: wordpress
+  namespace: lionel
+spec:
+  tls:
+  - hosts:
+    - wp.daubichon.com
+    secretName: wp.daubichon.com
+  rules:
+  - host: wp.daubichon.com
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: wordpress
+          servicePort: 80
+
