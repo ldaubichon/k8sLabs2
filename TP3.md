@@ -44,7 +44,7 @@ Consultez votre secret via une commande kubectl:
 
     kubectl get secrets -n lionel
 
-#![](images/#mysqlwordpress/secretmysql.png)
+![](images/mysqlwordpress/secretmysql.png)
 
 Vous pouvez aussi faire un describe sur votre secret, vous pouvez également créer votre secret à la main,
 en revanche cela implique d'encoder le secret en base64 avant. 
@@ -63,7 +63,7 @@ Lors de la création de votre volume, utilisez les paramètres suivants:
 * Donnez un Storage de 20Gi
 * Donnez la valeur ReadWriteOnce au paramètre [accessModes: ]
 
-#![](images/#mysqlwordpress/pvcmysql.png)
+![](images/mysqlwordpress/pvcmysql.png)
 
 Cette étape va automatiquement provisionner un volume sur ScaleWay
 
@@ -75,7 +75,7 @@ Créer un déploiement MySQL sans réplica.
 
 Votre déploiement n'est pas complet mais vous devriez obtenir un .yaml sensiblement identique:
 
-#![](images/#mysqlwordpress/deploymentmysql.png)
+![](images/mysqlwordpress/deploymentmysql.png)
 
 Dans votre déploiement vous allez avoir besoin de référencer plusieurs éléments:
 
@@ -87,7 +87,7 @@ Ces deux notions se passent au niveau des ***specs*** de votre déploiement.
 
 Lorsque vous aurez édité votre .**yaml** vous devriez obtenir un résultat similaire à celui-ci:
 
-#![](images/#mysqlwordpress/deploymentfull.png)
+![](images/mysqlwordpress/deploymentfull.png)
 
 Faites votre déploiement.
 
@@ -113,7 +113,7 @@ Créez un service kubernetes qui puisse exposer votre déploiement.
 Votre mysql est maintenant déployé dans votre namespace. 
 Vous devriez obtenir un résultat similaire:
 
-#![](images/#mysqlwordpress/servicemysql.png)
+![](images/mysqlwordpress/servicemysql.png)
 
 
 ## Wordpress
@@ -125,7 +125,7 @@ Basez vous sur le premier volumclaim pour mysql.
 
 Vous devriez obtenir ce type de fichier yaml:
 
-#![](images/#mysqlwordpress/pvcwordpress.png)
+![](images/mysqlwordpress/pvcwordpress.png)
 
 **Etape 2**
 
@@ -134,7 +134,7 @@ Pensez également à utiliser les bons environnements et volumes dans la défini
 
 Vous devriez obtenir un déploiement identique à celui-ci:
 
-#![](images/#mysqlwordpress/deploymentwordpress.png)
+![](images/mysqlwordpress/deploymentwordpress.png)
 
 **Etape 3**
 
@@ -146,14 +146,14 @@ Créez un service faisant référence à votre déploiement wordpress.
 
 Aide: 
 
-#![](images/#mysqlwordpress/wordpressdeploymentclaim.png)
+![](images/mysqlwordpress/wordpressdeploymentclaim.png)
 
 
 Vérifiez que vos déploiements ont bien fonctionné avec une commande kubernetes. 
 Vous pouvez également effectuer la commande kubectl get pvc pour savoir si vos volumes sont bien lancés. 
 
 Il doivent afficher le status bound:
-#![](images/#mysqlwordpress/bound.png)
+![](images/mysqlwordpress/bound.png)
 
 Faite également une commande kubectl pour explorer votre service.
 
@@ -175,7 +175,7 @@ Celle-ci sera sous le format prénom-wp.daubichon.com
 Vous devriez obtenir un yaml de ce type:
 
 
-#![](images/#mysqlwordpress/certificate.png)
+![](images/mysqlwordpress/certificate.png)
 
 
 Vous devriez maintenant avoir un site wordpress qui tourne sur kubernetes joignable depuis votre DNS ! 
