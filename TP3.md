@@ -15,14 +15,14 @@ mysql.
 
 ## Les Etapes 
 
-> Générer un secret pour MySQL
-> Créer un volume claim pour mysql
-> Générer un déploiement pour votre MySQL
-> Créer un service pour votre MySQL
-> Générer un déploiement pour votre Wordpress
-> Créer un volume claim pour votre Wordpress
-> Créer un service pour votre Wordpress
-> Appliquer un certificat SSL sur votre Wordpress 
+* Générer un secret pour MySQL
+* Créer un volume claim pour mysql
+* Générer un déploiement pour votre MySQL
+* Créer un service pour votre MySQL
+* Générer un déploiement pour votre Wordpress
+* Créer un volume claim pour votre Wordpress
+* Créer un service pour votre Wordpress
+* Appliquer un certificat SSL sur votre Wordpress 
 
 **Etape 1:**
 
